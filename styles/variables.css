@@ -4,16 +4,16 @@
 */
 
 :root {
-  --main-text-color: #F1B2CE;
+  --main-text-color: #f1b2ce;
   --title-text-color: #000028;
-  --accent-color: #FF0070;
-  --accent-transparent-color: rgba(255, 0, 112, 0.4);
+  --accent-color: #ff0070;
+  --accent-transparent-color: rgb(255 0 112 / 0.4);
   --space: 10px;
   --background-color: #000028;
-  --title-header-color: #DB00FF;
-  --background-image: url('../images/cover-image-dark.png');
+  --title-header-color: #db00ff;
+  --background-image: url(../images/cover-image-dark.png);
   --rec-visible: visible;
-  --shadow-color: #FF0070;
-  --title-background-color: #FF0070;
-  --link-shadow-color: #FF0070;
+  --shadow-color: #ff0070;
+  --title-background-color: #ff0070;
+  --link-shadow-color: #ff0070;
 }
