@@ -2,4 +2,356 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  color: var(--main-text-color);
+  font-size: 18px;
+  max-inline-size: 1024px;
+  line-height: 23.4px;
+  font-weight: normal;
+  background-color: var(--background-color);
+  background-image: var(--background-image); 
+  background-size: cover;                  
+  background-position: center;      
+  background-repeat: no-repeat;   
+  background-attachment: fixed;    
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: var(--space);
+  min-block-size: 668px;
+  margin-block-end: 40px;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px; 
+  block-size: 25px; 
+  border-top: 1px solid var(--accent-color); 
+  border-right: 1px solid var(--accent-color);
+  right: 0; 
+  margin-block-start: var(--space);
+  margin-inline-end: var(--space);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px; 
+  block-size: 25px; 
+  border-left: 1px solid var(--accent-color); 
+  border-bottom: 1px solid var(--accent-color);
+  bottom: 0;
+  left: 0;
+  margin-inline-start: var(--space);
+  margin-block-end: var(--space);
+}
+
+.rec {
+  margin-block-start: 11px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  position: absolute;
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+  right: 0;
+  margin-inline-end: 20px;
+  visibility: var(--rec-visible);
+}
+
+.rec::after {
+  content: '';
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 3px var(--shadow-color);
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  border: 1px solid transparent;
+  text-transform: lowercase;
+  color: var(--accent-color);
+  padding-inline: 13px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+}
+
+.header__theme-menu-button:focus-visible,
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid currentColor;
+  outline: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-transparent-color);
+}
+
+.main__title {
+  color: var(--title-header-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0px var(--shadow-color);
+  font-weight: bold;
+}
+
+.header__description {
+  color: var(--title-text-color);
+  font-weight: bold;
+  align-self: center;
+}
+
+.title-decor {
+  background-color: var(--title-background-color);
+}
+
+.main {
+  padding: 0 var(--space);
+}
+
+.section {
+  margin-block-end: 50px;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  gap: 20px;
+}
+
+.section__title {
+  font-size: inherit;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.cards {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(min-content, max-content));
+  grid-auto-flow: rows;
+  grid-auto-rows: minmax(min-content, max-content);
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__title {
+  font-size: inherit;
+  font-weight: bold;
+  color: var(--title-text-color);
+}
+
+.card__link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0px var(--link-shadow-color);
+}
+
+.card__link:focus,
+.card__link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+
+}
+
+.card__link:hover {
+  cursor: pointer;
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.card__subtitle {
+  font-size: inherit;
+  font-weight: normal;
+  color: var(--title-text-color);
+}
+
+.section__images {
+  gap: 10px;
+}
+
+.image__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image__card {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.footer {
+  margin-block-start: -10px;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  min-block-size: 668px;
+}
+
+.footer .main__title{
+  align-self: center;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px; 
+  block-size: 25px; 
+  border-top: 1px solid var(--accent-color); 
+  border-right: 1px solid var(--accent-color);
+  right: 0; 
+  margin-block-start: var(--space);
+  margin-inline-end: var(--space);
+}
+
+@media (width >= 768px) {
+  :root {
+    --space: 20px;
+  }
+
+  .header {
+    min-block-size: 1024px;
+    margin-block-end: 60px;
+  }
+
+  .rec {
+    margin-block-start: 21px;
+    margin-inline-end: 29px;
+  }
+
+  .main__title {
+    margin-inline-start: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__description {
+    width: 50%;
+    justify-self: end;
+  }
+
+  .section__why {
+    grid-template-columns: 30% 1fr;
+    gap: 40px;
+  }
+
+  .section {
+    margin-block-end: 40px;
+  }
+
+  .section__reasons .section__title {
+   width: 30%;
+  }
+
+  .section__methods {
+    margin-block-start: 80px;
+    grid-template-columns: 33% 1fr;
+    gap: 15px;
+  }
+
+  .section__images {
+    margin-block-start: 65px;
+    gap: 20px;
+  }
+
+  .image__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+    gap: 20px;
+  }
+
+  .sunset__image {
+    grid-area: sunset;
+  }
+
+  .ice-cream__image {
+    grid-area: ice-cream;
+    align-self: stretch;
+  }
+
+  .tape__image {
+    grid-area: tape;
+    align-self: stretch;
+  }
+
+  .books__image {
+    grid-area: books;
+  }
+
+  .street__image {
+    grid-area: street;
+  }
+
+  .footer {
+    margin-block-start: 60px;
+    min-block-size: 1024px;
+  }
+
+  .footer .main__title {
+    margin-inline-start: 5px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .section__why {
+    gap: 40px;
+  }
+  
+  .section__reasons .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section__methods {
+    gap: 10px;
+  }
+
+  .section__images {
+    margin-block-start: 70px;
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
 }
