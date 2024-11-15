@@ -6,7 +6,7 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 23.4px;
-  background-image: var(--background-image);
+  background-image: var(--background-image, #000028);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -23,6 +23,7 @@
   grid-template-rows: 1fr min-content 1fr;
   margin-block-end: 40px;
   padding: var(--space);
+  height: 100vh;
   min-block-size: 668px;
 }
 
@@ -98,10 +99,12 @@
   text-transform: lowercase;
   background-color: transparent;
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .header__theme-menu-button_active {
   border: 1px solid currentColor;
+  pointer-events: none;
 }
 
 .header__theme-menu-button:focus-visible,
@@ -210,6 +213,7 @@
   display: grid;
   justify-items: center;
   margin-block-start: -10px;
+  height: 100vh;
   min-block-size: 668px;
 }
 
