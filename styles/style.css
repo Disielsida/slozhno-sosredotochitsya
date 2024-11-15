@@ -6,7 +6,8 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 23.4px;
-  background-image: var(--background-image, #000028);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -14,16 +15,12 @@
   max-inline-size: 1024px;
 }
 
-.body {
-  background-color: var(--background-color);
-}
-
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
   margin-block-end: 40px;
   padding: var(--space);
-  height: 100vh;
   min-block-size: 668px;
 }
 
@@ -98,8 +95,8 @@
   font-size: inherit;
   text-transform: lowercase;
   background-color: transparent;
-  cursor: pointer;
   transition: 0.25s ease;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -212,8 +209,8 @@
   position: relative;
   display: grid;
   justify-items: center;
-  margin-block-start: -10px;
   height: 100vh;
+  margin-block-start: -10px;
   min-block-size: 668px;
 }
 
